@@ -50,7 +50,7 @@ jobs:
         - run:
             name: Install eksctl
             command: |
-              iff which eksctl > /dev/null; then
+              if which eksctl > /dev/null; then
               echo "eksctl is already installed"
               exit 0
               fi
