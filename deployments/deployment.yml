@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: damocapstonepro
+  labels:
+    app: damocapstonepro
+spec:
+  selector:
+    matchLabels:
+      app: damocapstonepro
+  replicas: 1
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+  template:
+    metadata:
+      labels:
+        app: damocapstonepro
+    spec:
+      containers:
+      - name: damocapstonepro
+        image: damodharanr/udacitycapstone
+        resources:
+          requests:
+            cpu: 100m
+            memory: 100Mi
+        ports:
+        - containerPort: 80
