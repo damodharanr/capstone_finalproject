@@ -75,7 +75,7 @@ jobs:
             node-type: t2.small
             nodes-max: 2
             ssh-access: false
-            ssh-public-key: 'udacity-fresh-working-key'   
+            ssh-public-key: 'udacity-finalpro-key'   
     # deploy app using templates               
     deploy-application:
       executor: aws-eks/python3
